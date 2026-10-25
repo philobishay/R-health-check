@@ -1,4 +1,4 @@
-# R: health check
+# Raid health check
 
 Watches a Windows mirrored drive (Disk Management's *Mirrored volume* on two dynamic disks; `R:` unless you say
 otherwise) and tells you when anything is wrong, so you can copy what matters off the surviving disk.
@@ -23,14 +23,14 @@ On a problem you get an email, a pop-up and a line in `C:\ProgramData\MirrorChec
    ```powershell
    New-Item -ItemType Directory -Force "$HOME\Repos" | Out-Null
    cd "$HOME\Repos"
-   git clone https://github.com/philobishay/R-health-check.git
+   git clone https://github.com/philobishay/Raid-health-check.git
    ```
    If an earlier copy of the folder is there, delete it first. It holds no settings; setup keeps them in
    `C:\ProgramData\MirrorCheck`.
 3. **Run setup in an Administrator window.** Right-click Start → **Terminal (Admin)** (older Windows 10: **Windows
    PowerShell (Admin)**), click Yes, then paste these two lines:
    ```powershell
-   cd "$HOME\Repos\R-health-check"
+   cd "$HOME\Repos\Raid-health-check"
    powershell -NoProfile -ExecutionPolicy Bypass -File .\setup.ps1
    ```
    Setup shows what `diskpart` reports for `R:`, asks for the Gmail address and the app password, sends a test alert
